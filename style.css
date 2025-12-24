@@ -147,33 +147,126 @@ details p {
 }
 
 /* Responsividad */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
     div {
-        grid-template-columns: 1fr;
-        gap: 25px;
+        grid-template-columns: 0.8fr 1fr 0.8fr;
+        gap: 15px;
+        padding: 15px;
     }
     
     section {
-        max-height: 70vh;
+        padding: 20px 15px;
+        max-height: calc(100vh - 30px);
     }
     
-    img {
-        max-width: 100%;
+    h2 {
+        font-size: clamp(18px, 5vw, 32px);
+        margin: 15px 0;
+    }
+    
+    details {
+        width: 85%;
     }
 }
 
 @media (max-width: 768px) {
+    html {
+        overflow: hidden;
+        height: 100%;
+    }
+    
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
     div {
-        padding: 20px 15px;
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 10px;
+        grid-template-rows: auto auto auto;
     }
     
     section {
-        padding: 20px 15px;
-        max-height: 60vh;
+        padding: 15px;
+        max-height: calc(25vh - 4px);
+        border-radius: 15px;
+    }
+    
+    section:first-child {
+        order: 1;
+    }
+    
+    section:last-child {
+        order: 3;
+    }
+    
+    img {
+        grid-row: 2;
+        max-height: 35vh;
+        border-radius: 15px;
     }
     
     h2 {
-        margin: 15px 0;
+        font-size: clamp(16px, 5vw, 24px);
+        margin: 10px 0;
+    }
+    
+    details {
+        width: 95%;
+        margin: 10px auto;
+        padding: 12px 15px;
+        border-radius: 12px;
+    }
+    
+    details summary {
+        font-size: clamp(11px, 4vw, 15px);
+        padding: 6px 0;
+    }
+    
+    details p {
+        font-size: clamp(10px, 3.5vw, 13px);
+        margin: 10px 0 0 0;
+    }
+}
+
+@media (max-width: 480px) {
+    div {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 8px;
+    }
+    
+    section {
+        padding: 12px;
+        max-height: calc(23vh - 4px);
+        border-radius: 12px;
+    }
+    
+    img {
+        max-height: 30vh;
+        border-radius: 12px;
+    }
+    
+    h2 {
+        font-size: clamp(14px, 5vw, 20px);
+        margin: 8px 0;
+    }
+    
+    details {
+        width: 98%;
+        margin: 8px auto;
+        padding: 10px 12px;
+        border-radius: 10px;
+    }
+    
+    details summary {
+        font-size: clamp(10px, 4vw, 13px);
+        padding: 4px 0;
+    }
+    
+    details p {
+        font-size: clamp(9px, 3.5vw, 12px);
+        margin: 8px 0 0 0;
     }
 }
